@@ -523,3 +523,46 @@ Command2=[!SetVariable path22 "[MeasureShortcut22Input]"][!UpdateMeter MeterShor
 Command3=[!Refresh "rainmeter-allin" "Allin.ini"]
 Container=MeterContainerShortcuts2
 Group=Shortcuts2
+
+[MeterShortcutFloat2Label]
+Meter=String
+Text=Atajo flotante 2 - Firefox:
+MeterStyle=styleLabel
+X=2
+Y=10R
+AntiAlias=1
+Container=MeterContainerShortcuts2
+Group=Shortcuts2
+
+[MeterShortcutFloat2Value]
+Meter=String
+MeterStyle=styleLabel
+X=5R
+Y=0r
+AntiAlias=1
+DynamicVariables=1
+Text=#floating2path#
+LeftMouseUpAction=!CommandMeasure "MeasureShortcutFloat2ValueInput" "ExecuteBatch 1-3"
+MouseOverAction=[Play #soundsPath#\hover.wav][!SetOption MeterShortcutFloat2Value FontColor #colorSecondary#][!UpdateMeter MeterShortcutFloat2Value][!Redraw]
+MouseLeaveAction=[!SetOption MeterShortcutFloat2Value FontColor #colorMain#][!UpdateMeter MeterShortcutFloat2Value][!Redraw]
+Container=MeterContainerShortcuts2
+Group=Shortcuts2
+Hidden=1
+
+[MeasureShortcutFloat2ValueInput]
+Measure=Plugin
+Plugin=InputText
+SolidColor=#colorSecondary#
+FontColor=#colorMain#
+FontFace=#fontSecondary#
+StringStyle=Italic
+FontSize=13
+X=10
+Y=483
+W=364
+DefaultValue=#floating2path#
+Command1=[!WriteKeyValue Variables floating2path "$UserInput$" "#@#Settings.inc"]
+Command2=[!SetVariable floating2path "[MeasureShortcutFloat2ValueInput]"][!UpdateMeter MeterShortcutFloat2Value][!Redraw]
+Command3=[!Refresh "rainmeter-allin" "Allin.ini"]
+Container=MeterContainerShortcuts2
+Group=Shortcuts2
