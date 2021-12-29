@@ -180,17 +180,59 @@ MouseLeaveAction=[!SetOption MeterDisk3Unit FontColor #colorMain#][!UpdateMeter 
 LeftMouseDownAction=["#disk3#"]
 Group=MeterDisk3
 
+[MeterDisk4Unit]
+Meter=String
+MeterStyle=styleDiskUnit
+Text=#disk4#
+X=30R
+Y=-5r
+MouseOverAction=[Play #soundsPath#\hover.wav][!SetOption MeterDisk4Unit FontColor #colorSecondary#][!UpdateMeter MeterDisk4Unit][!Redraw][!SetOption MeterDisk4Percentage FontColor #colorSecondary#][!UpdateMeter MeterDisk4Percentage][!Redraw][!SetOption MeterUsedDisk4 LineColor #colorSecondary#][!UpdateMeter MeterUsedDisk4][!Redraw]
+MouseLeaveAction=[!SetOption MeterDisk4Unit FontColor #colorMain#][!UpdateMeter MeterDisk4Unit][!Redraw][!SetOption MeterDisk4Percentage FontColor #colorMain#][!UpdateMeter MeterDisk4Percentage][!Redraw][!SetOption MeterUsedDisk4 LineColor #colorMain#][!UpdateMeter MeterUsedDisk4][!Redraw]
+LeftMouseDownAction=["#disk4#"]
+Group=MeterDisk4
+
+[MeterDisk4Percentage]
+Meter=String
+MeasureName=MeasureUsedDisk4
+MeterStyle=styleDiskPercentage
+Text=%1%
+Percentual=1
+X=0r
+Y=-1R
+MouseOverAction=[Play #soundsPath#\hover.wav][!SetOption MeterDisk4Unit FontColor #colorSecondary#][!UpdateMeter MeterDisk4Unit][!Redraw][!SetOption MeterDisk4Percentage FontColor #colorSecondary#][!UpdateMeter MeterDisk4Percentage][!Redraw][!SetOption MeterUsedDisk4 LineColor #colorSecondary#][!UpdateMeter MeterUsedDisk4][!Redraw]
+MouseLeaveAction=[!SetOption MeterDisk4Unit FontColor #colorMain#][!UpdateMeter MeterDisk4Unit][!Redraw][!SetOption MeterDisk4Percentage FontColor #colorMain#][!UpdateMeter MeterDisk4Percentage][!Redraw][!SetOption MeterUsedDisk4 LineColor #colorMain#][!UpdateMeter MeterUsedDisk4][!Redraw]
+LeftMouseDownAction=["#disk4#"]
+Group=MeterDisk4
+
+[MeterUsedDisk4]
+Meter=Roundline
+MeasureName=MeasureUsedDisk4
+X=5R
+Y=-10r
+W=20
+H=20
+StartAngle=(Rad(270))
+RotationAngle=(Rad(-360))
+LineLength=10
+LineColor=#colorMain#
+Solid=1
+AntiAlias=1
+MouseOverAction=[Play #soundsPath#\hover.wav][!SetOption MeterDisk4Unit FontColor #colorSecondary#][!UpdateMeter MeterDisk4Unit][!Redraw][!SetOption MeterDisk4Percentage FontColor #colorSecondary#][!UpdateMeter MeterDisk4Percentage][!Redraw][!SetOption MeterUsedDisk4 LineColor #colorSecondary#][!UpdateMeter MeterUsedDisk4][!Redraw]
+MouseLeaveAction=[!SetOption MeterDisk4Unit FontColor #colorMain#][!UpdateMeter MeterDisk4Unit][!Redraw][!SetOption MeterDisk4Percentage FontColor #colorMain#][!UpdateMeter MeterDisk4Percentage][!Redraw][!SetOption MeterUsedDisk4 LineColor #colorMain#][!UpdateMeter MeterUsedDisk4][!Redraw]
+LeftMouseDownAction=["#disk4#"]
+Group=MeterDisk4
+
 [MeterUploadIcon]
 Meter=Image
 ImageName=#uploadIcon#
-X=85R
-Y=-30r
+X=10
+Y=40r
 
 [MeterUploadText]
 Meter=String
 MeterStyle=styleSystemLabel
 MeasureName=MeasureUpload
-Text=%1Mb/s
+Text=%1 Mb/s
 Scale=(1024**2)
 NumOfDecimals=2
 X=5R
@@ -199,14 +241,14 @@ Y=2r
 [MeterDownloadIcon]
 Meter=Image
 ImageName=#downloadIcon#
-X=-67R
+X=10
 Y=10R
 
 [MeterDownloadText]
 Meter=String
 MeterStyle=styleSystemLabel
 MeasureName=MeasureDownload
-Text=%1Mb/s
+Text=%1 Mb/s
 Scale=(1024**2)
 NumOfDecimals=2
 X=5R
